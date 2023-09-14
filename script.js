@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timer()
 });
 
+// form reply
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll('.dest-info-card');
 
@@ -108,5 +109,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cards.forEach((card) => {
         card.style.height = `${maxHeight}px`;
+    });
+});
+
+// scroll screen
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollLinks = document.querySelectorAll('.scroll-btn');
+    scrollLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            // stop jump to other site
+            e.preventDefault(); 
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const targetY = targetElement.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
