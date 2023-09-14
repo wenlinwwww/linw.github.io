@@ -90,7 +90,19 @@
             // stop jump to other page
             e.preventDefault();
             const name = document.getElementById('name').value;
-            alert(name + ', your form has been submited！ Thanks for your feedback!');
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            if (name.trim() === '') {
+                alert('pls type your name！');
+            } else if (email.trim() === '') {
+                alert('pls type your email address！');
+            } else if (comment.trim() === '') {
+                alert('pls type any comment！');
+            } else {
+                alert(name + '，your form has been submited！ Thanks for your feedback!');
+                location.reload();
+            }
         });
     </script>
 </body>
