@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel to melbourne</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <img src="images/logo.png" alt="web-logo">
+            <a href="index.html">Travel to Melbourne</a>
+        </div>
+        <!-- for responsive -->
+        <div class="menu"></div>
+        <div class="navigation">
+            <div class="nav-link">
+                <a href="index.html">Home</a>
+                <a href="#place">Place</a>
+                <a href="#destination">Destination</a>
+                <a href="contact.html" class="current-page">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="detail">
+        <div class="contac-title">
+            <h3>Contact</h3>
+        </div>
+        <div class="main-detail">
+            <div class="form">
+                <h2>Write for anything</h2>
+                <p>Write to this email for a detailed quotation quote@travel.com and information.</p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="submitBtn">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.6457221774094!2d144.95839907474826!3d-37.798341633154834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642d45c07254b%3A0xeacb63e2b725ff6d!2sThe%20University%20of%20Melbourne!5e0!3m2!1sen!2sau!4v1694687053729!5m2!1sen!2sau"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Travel beyond your imagination, with our Travel Agency!</h3>
+                <p>Parkville VIC 3052</p>
+                <p>Melbourne - Victoria</p>
+                <p>Australia</p>
+                <h3>Phone: +61 470242000</h3>
+                <span>info@travel.com</span>
+            </div>
+            <div class="social-icons">
+                <h3>Follow Us</h3>
+                <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 abc Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function (e) {
+            // stop jump to other page
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(name + ', your form has been submited！ Thanks for your feedback!');
+        });
+    </script>
+</body>
+
+</html>

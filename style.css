@@ -1,0 +1,861 @@
+:root {
+    --primary-color--: #353535;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Sans-serif;
+    letter-spacing: 1px;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: black;
+    padding: 1% 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 999;
+}
+
+header .brand {
+    margin-left: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+header .brand a {
+    color: #353535;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #6d6d6d;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+
+header .brand img {
+    margin-right: 0.5vw;
+    height: 2.5em;
+}
+
+header .navigation {
+    position: flex;
+    align-items: center;
+}
+
+header .navigation .nav-link {
+    position: flex;
+    align-items: center;
+}
+
+header .navigation .nav-link a {
+    font-weight: 500;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #727475;
+    margin-right: 3vw;
+    transition: color 0.3s ease;
+}
+
+header .navigation .nav-link a:hover,
+header .navigation .nav-link a:active {
+    color: var(--primary-color--);
+    /* text-decoration: underline; */
+    border-bottom: 2px solid var(--primary-color--);
+    margin-bottom: 5px;
+}
+
+header .navigation .nav-link a.current-page {
+    color: var(--primary-color--);
+    font-weight: bold;
+}
+
+
+/* scroll screen part */
+.shell {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.images {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: .2s;
+}
+
+.img {
+    width: 100%;
+    background-size: cover;
+}
+
+.img:nth-child(1) {
+    background-image: url("images/building.jpg");
+}
+
+.img:nth-child(2) {
+    background-image: url("images/yarra.jpg");
+}
+
+.img:nth-child(3) {
+    background-image: url("images/traffic.jpg");
+}
+
+.img:nth-child(4) {
+    background-image: url("images/food.jpg");
+}
+
+.min-images {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 20px;
+    width: 40%;
+    z-index: 100;
+    right: 10%;
+}
+
+.min {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-size: cover;
+    border: solid rgba(255, 255, 255, 0.5) 5px;
+    background-position: -20px 0;
+}
+
+.min:nth-child(1) {
+    background-image: url("images/building.jpg");
+}
+
+.min:nth-child(2) {
+    background-image: url("images/yarra.jpg");
+}
+
+.min:nth-child(3) {
+    background-image: url("images/traffic.jpg");
+}
+
+.min:nth-child(4) {
+    background-image: url("images/food.jpg");
+}
+
+.button {
+    width: 100%;
+    height: 10%;
+    top: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.button-left,
+.button-right {
+
+    font-size: 50px;
+    padding: 5px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: background-color 0.3s, opacity 0.3s ease-in-out;
+}
+
+.button-left:hover,
+.button-right:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.content {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 500px;
+    /* background-color: rgba(88, 34, 88, 0.5); */
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.content.active {
+    display: block;
+}
+
+.content h1 {
+    margin-bottom: 1%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+/* trip part */
+.trip-info {
+    background-image: url(https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/04/para-16.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 891px;
+    background-size: 529px auto;
+    opacity: 0.8;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.trip-content span,
+.dest-intro span,
+.roaming-table span {
+    color: #06A6E3;
+    font-family: "Reenie Beanie", Sans-serif;
+    line-height: 1.5em;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.trip-content h1,
+.dest-intro h1,
+.roaming-table h1 {
+    color: #112542;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2em;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.trip-content p,
+.dest-intro p,
+.roaming-table p {
+    line-height: 1.5em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #7A7A7A;
+}
+
+.trip-content a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background-color: #06A6E3;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.trip-content a:hover {
+    background-color: #0571A6;
+    transform: scale(1.05);
+    /* zoom up 1.5 */
+}
+
+.trip-columns .column:nth-child(1) {
+    background-image: url("https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/06/d-banner-01.png");
+    background-size: cover;
+}
+
+.trip-columns .column:nth-child(2) {
+    background-image: url("https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/06/d-banner-02.jpg");
+    background-size: cover;
+}
+
+.trip-columns .column:nth-child(3) {
+    background-image: url("https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/06/d-banner-03.jpg");
+    background-size: cover;
+}
+
+/* destination part */
+.top-destination {
+    background-image: url(https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/05/bg-05.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 1350px auto;
+}
+
+.dest-info-grid .dest-info-card:nth-child(1) {
+    background-image: url(images/Melbourne\ city\ skyline.jpg);
+    background-size: cover;
+}
+
+.dest-info-grid .dest-info-card:nth-child(2) {
+    background-image: url(images/place.jpg);
+    background-size: cover;
+}
+
+.dest-info-grid .dest-info-card:nth-child(3) {
+    background-image: url(images/traffic.jpg);
+    background-size: cover;
+}
+
+.dest-info-grid .dest-info-card:nth-child(4) {
+    background-image: url(images/restauran.jpg);
+    background-size: cover;
+}
+
+.dest-info-card {
+    position: relative;
+}
+
+.dest-info-grid h3 {
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+}
+
+.dest-info-card .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.dest-info-card:hover .mask {
+    opacity: 1;
+}
+
+.mask p {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* blog part */
+.travel-blog {
+    background-image: url(https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/05/bg-05.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 800px auto;
+    opacity: 1;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    width: 100%;
+}
+
+
+.blog-main-left img {
+    max-width: 80%;
+    height: auto;
+}
+
+.blog-sub-right img {
+    max-width: 50%;
+    height: auto;
+}
+
+.contact-container {
+    background-color: darkblue;
+    background-image: url(https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/05/para-08.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    mix-blend-mode: multiply;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+
+.brife-ending h1 {
+    margin-top: 1%;
+}
+
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.contact-container .media-icons a i {
+    color: white;
+    font-size: 3em;
+    padding: 1% 3%;
+}
+
+.contact-container a {
+    text-decoration: none;
+}
+
+.contact-container a:link,
+a:visited {
+    color: white;
+}
+
+.contact-container a:hover {
+    color: blue;
+}
+
+/* contact  part */
+.detail {
+    width: 100%;
+    height: 100%;
+}
+
+.detail .contac-title {
+    width: 100%;
+    height: 50vh;
+    background-image: url(http://www.nicdarkthemes.com/themes/travel/wp/demo/summer-holiday/wp-content/uploads/sites/4/2018/03/package-02.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contac-title h3 {
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.main-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f0f0f0;
+}
+
+.form,
+.map {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    min-height: 200px;
+    align-self: stretch;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: 95%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05); 
+}
+
+/* another-footer */
+.footer-container {
+    background-image: url(https://travel.nicdark.com/tourism-wordpress-theme/wp-content/uploads/sites/4/2023/05/para-08.jpg);
+    background-size: cover;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info,
+.social-icons {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info h3,
+.social-icons h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-icons .icon {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2%;
+    padding: 20px 0;
+    background-color: #222;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+/* Responsive part */
+@media screen and (max-width: 768px) {
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .nav-link a {
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation.active .nav-link {
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+    header .menu {
+        background-image: url(images/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-right: 1vw;
+    }
+
+    .menu.active {
+        z-index: 999;
+        background-image: url(images/close.png);
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+
+    /* trip part */
+    .trip-info {
+        margin: 0 5%;
+    }
+
+    .trip-detail {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trip-columns {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .trip-columns .column {
+        flex-basis: 100%;
+        /* background-color: #f0f0f0; */
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .trip-columns .column img {
+        margin-left: 5%;
+        width: 20%;
+        height: auto;
+    }
+
+    .column h4 {
+        padding: 5% 20%;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5em;
+        color: #FFFFFF;
+    }
+
+    /* destination part */
+    .top-destination {
+        margin: 0 5%;
+    }
+
+    .trip-destination-container,
+    .blog-container {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dest-info-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dest-info-card {
+        width: calc(50% - 10px);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        float: left;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    /* blog part */
+    .travel-blog {
+        margin: 0 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dest-info-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dest-info-card {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        float: left;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header .menu {
+        display: none;
+    }
+
+    /* trip part */
+    .trip-info {
+        margin: 0 5%;
+    }
+
+    .trip-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .trip-content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .empty-content {
+        width: 50%;
+        height: auto;
+    }
+
+    .trip-columns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3%;
+    }
+
+    .trip-columns .column {
+        /* flex-basis: calc(33.33% - 20px); */
+        width: 30%;
+        padding: 1%;
+        /* background-color: #f0f0f0; */
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .trip-columns .column img {
+        width: 20%;
+        height: auto;
+    }
+
+    .column h4 {
+        padding: 5% 20%;
+        margin: 0;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5em;
+    }
+
+    /* destination part */
+    .top-destination {
+        margin: 0 5%;
+    }
+
+    .intro-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dest-intro {
+        width: 50%;
+        text-align: left;
+    }
+
+    .intro-container .empty-content {
+        width: 50%;
+        height: auto;
+    }
+
+    .dest-info-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dest-info-card {
+        width: calc(25% - 10px);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        float: left;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    /* blog part */
+    .travel-blog {
+        width: 100%;
+        margin: 0 5%;
+    }
+
+    /* .blog-detail-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .blog-main-left {
+        flex: 1;
+
+    }
+
+    .blog-sub-right {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    } */
+
+}
